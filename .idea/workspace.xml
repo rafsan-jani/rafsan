@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73ba570e-72a9-4a8b-b944-57795036417a" name="Default" comment="initial commit&#10;" />
+    <list default="true" id="73ba570e-72a9-4a8b-b944-57795036417a" name="Default" comment="initial commit&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="ParsingLogFile.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
