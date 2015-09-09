@@ -60,16 +60,20 @@ public class Simulation {
         do {
             userInterface();
             option = scanner.nextInt();
-            if (option == 1) {
-                System.out.print("Enter user Id: ");
-                userId = scanner.next();
-                processByUserId(userId);
-            } else if (option == 2) {
-                generateHourlyReport();
-            } else if (option == 3) {
-                /**/
-            } else {
-                System.out.println("Invalid option. please try again...");
+            switch (option) {
+                case 1:
+                    System.out.print("Enter user Id: ");
+                    userId = scanner.next();
+                    processByUserId(userId);
+                    break;
+                case 2:
+                    generateHourlyReport();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Invalid option. please try again...");
+                    break;
             }
         } while (option != 3);
     }
