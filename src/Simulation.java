@@ -5,9 +5,9 @@ import java.util.Scanner;
  * Created by rafsan.jani on 9/3/15.
  */
 public class Simulation {
-    Scanner scanner;
-    ArrayList<Information>[]hourlyInfo;
-    void userInterface(){
+    private ArrayList<Information>[] hourlyInfo;
+
+    void userInterface() {
         System.out.println();
         System.out.println("*****************************");
         System.out.println("*\tPress:\t\t\t\t\t*");
@@ -17,63 +17,60 @@ public class Simulation {
         System.out.println("*****************************");
         System.out.print("Select option: ");
     }
-    void processUser(String userId){
-        int totalTime=0,getRequest=0,postRequest=0;
-        for(int hour=0;hour<24;hour++){
-            for(int j=0;j<hourlyInfo[hour].size();j++)
-            {
-                if(hourlyInfo[hour].get(j).userId.compareTo(userId)==0){
-                    totalTime+=hourlyInfo[hour].get(j).time;
-                    if(hourlyInfo[hour].get(j).method.compareTo("Get")==0){
-                        getRequest+=hourlyInfo[hour].get(j).time;
-                    }
-                    else{
-                        postRequest+=hourlyInfo[hour].get(j).time;
+
+    void processByUserId(String userId) {
+        int totalTime = 0, getRequest = 0, postRequest = 0;
+        for (int hour = 0; hour < 24; hour++) {
+            for (int j = 0; j < hourlyInfo[hour].size(); j++) {
+                if (hourlyInfo[hour].get(j).getUserId().compareTo(userId) == 0) {
+                    totalTime += hourlyInfo[hour].get(j).getTime();
+                    if (hourlyInfo[hour].get(j).getMethod().compareTo("Get") == 0) {
+                        getRequest += hourlyInfo[hour].get(j).getTime();
+                    } else {
+                        postRequest += hourlyInfo[hour].get(j).getTime();
                     }
                 }
             }
         }
-        if(totalTime==0){
+        if (totalTime == 0) {
             System.out.println("This user never used  the system.");
-        }
-        else {
-            System.out.println("User "+userId+" used the server total "+totalTime+"ms");
-            System.out.println("Get request: "+getRequest+"ms");
-            System.out.println("Post request: "+postRequest+"ms");
+        } else {
+            System.out.println("User " + userId + " used the server total " + totalTime + "ms");
+            System.out.println("Get request: " + getRequest + "ms");
+            System.out.println("Post request: " + postRequest + "ms");
         }
     }
-    void hourlyReport(){
-        for(int hour=0;hour<24;hour++)
-        {
-            if(hourlyInfo[hour].size()>0)System.out.println("Hour: "+(hour+1));
-            for(int j=0;j<hourlyInfo[hour].size();j++){
+
+    void generateHourlyReport() {
+        for (int hour = 0; hour < 24; hour++) {
+            if (hourlyInfo[hour].size() > 0) System.out.println("Hour: " + (hour + 1));
+            for (int j = 0; j < hourlyInfo[hour].size(); j++) {
                 hourlyInfo[hour].get(j).print();
             }
         }
     }
-    public void run(){
-        ParseFile parseFile=new ParseFile();
-        hourlyInfo=parseFile.readFile();
-        scanner=new Scanner(System.in);
+
+    public void run() {
+        Scanner scanner;
+        ParseFile parseFile = new ParseFile();
         int option;
         String userId;
+        hourlyInfo = parseFile.readFile();
+        scanner = new Scanner(System.in);
         do {
             userInterface();
-            option=scanner.nextInt();
-                if(option==1){
-                    System.out.print("Enter user Id: ");
-                    userId=scanner.next();
-                    processUser(userId);
-                }
-                else if(option==2) {
-                 hourlyReport();
-                }
-                else if(option==3){
+            option = scanner.nextInt();
+            if (option == 1) {
+                System.out.print("Enter user Id: ");
+                userId = scanner.next();
+                processByUserId(userId);
+            } else if (option == 2) {
+                generateHourlyReport();
+            } else if (option == 3) {
                 /**/
-                }
-                else {
+            } else {
                 System.out.println("Invalid option. please try again...");
-                }
-        }while(option!=3);
+            }
+        } while (option != 3);
     }
 }
