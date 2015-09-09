@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73ba570e-72a9-4a8b-b944-57795036417a" name="Default" comment="initial commit&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ParsingLogFile/Simulation.class" afterPath="$PROJECT_DIR$/out/production/ParsingLogFile/Simulation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulation.java" afterPath="$PROJECT_DIR$/src/Simulation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="73ba570e-72a9-4a8b-b944-57795036417a" name="Default" comment="initial commit&#10;" />
     <ignored path="ParsingLogFile.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -473,7 +469,7 @@
       <workItem from="1441609049764" duration="1655000" />
       <workItem from="1441693629549" duration="11608000" />
       <workItem from="1441774355331" duration="625000" />
-      <workItem from="1441780496364" duration="1033000" />
+      <workItem from="1441780496364" duration="1046000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit&#10;">
       <created>1441774592651</created>
@@ -485,7 +481,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31690000" />
+    <option name="totallyTimeSpent" value="31703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1026" height="742" extended-state="6" />
